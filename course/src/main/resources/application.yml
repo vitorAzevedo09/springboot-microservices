@@ -1,6 +1,6 @@
 server:
   port: 8082
-
+  
 spring:
   application:
     name: course
@@ -17,3 +17,13 @@ spring:
     url: jdbc:mysql://localhost:3306/devdojo?allowPublicKeyRetrieval=true&sslMode=DISABLED
     username: root
     password: devdojo
+    
+eureka:
+  instance: 
+    prefer-ip-address: true
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url: 
+      defaultZone: http://localhost:8081/eureka/
+    
