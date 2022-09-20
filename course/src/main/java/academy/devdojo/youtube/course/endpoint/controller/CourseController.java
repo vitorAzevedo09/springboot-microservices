@@ -12,7 +12,7 @@ import academy.devdojo.youtube.course.endpoint.service.CourseService;
 import lombok.extern.slf4j.Slf4j;
 
 @RestController
-@RequestMapping("v1/admin/course")
+@RequestMapping("/course")
 @Slf4j
 public class CourseController {
     private final CourseService courseService;
@@ -21,7 +21,7 @@ public class CourseController {
     	this.courseService = courseService;
 	}
 
-    @GetMapping
+    @GetMapping("/v1/admin/course/")
     public ResponseEntity<Iterable<Course>> list(Pageable pageable) {
         return new ResponseEntity<>(courseService.list(pageable), HttpStatus.OK);
     }
