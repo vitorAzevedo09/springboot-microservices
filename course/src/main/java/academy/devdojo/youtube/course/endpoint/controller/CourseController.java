@@ -15,14 +15,14 @@ import lombok.extern.slf4j.Slf4j;
 @RequestMapping("/course")
 @Slf4j
 public class CourseController {
-    private final CourseService courseService;
-    
-    public CourseController(CourseService courseService) {
-    	this.courseService = courseService;
-	}
+  private final CourseService courseService;
 
-    @GetMapping("/v1/admin/course/")
-    public ResponseEntity<Iterable<Course>> list(Pageable pageable) {
-        return new ResponseEntity<>(courseService.list(pageable), HttpStatus.OK);
-    }
+  public CourseController(CourseService courseService) {
+    this.courseService = courseService;
+  }
+
+  @GetMapping("/v1/admin/course/")
+  public ResponseEntity<Iterable<Course>> list(Pageable pageable) {
+    return new ResponseEntity<>(courseService.list(pageable), HttpStatus.OK);
+  }
 }
